@@ -1,21 +1,16 @@
+@import './utilities.css';
+@import './navigation.css';
+
+/* Fonts */
 @import '@fontsource/open-sans';
-/* @import 'normalize.css'; */
 
 @font-face {
   font-family: "LemonMilk";
   src: url("/fonts/lemon_milk/LEMONMILK-Regular.otf");
 }
-:root {
-  /* --accent: 136, 58, 234;
-  --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    ); */
 
+
+:root {
   --base-dark: #222222;
   --base-light: #FAFBFB;
 }
@@ -30,6 +25,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  color: var(--base-dark);
 }
 img, picture, video, canvas, svg {
   display: block;

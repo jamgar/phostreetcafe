@@ -1,19 +1,35 @@
 ---
+import { Icon } from "astro-icon";
 import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <Layout title="Pho Street Cafe">
+  <Navigation />
   <main>
-    <h1>Welcome to <span class="text-gradient">Pho Street Cafe</span></h1>
-    <h2>Welcome to <span class="text-gradient">Pho Street Cafe</span></h2>
-    <h3>Welcome to <span class="text-gradient">Pho Street Cafe</span></h3>
-    <h4>Welcome to <span class="text-gradient">Pho Street Cafe</span></h4>
-    <a href="#">This is a link</a>"
-    <button>Button</button>
+    <section id="hero">
+      <h1 class="tx-center">ORDER NOW</h1>
+    </section>
+    <section id="menu">
+      <h2 class="tx-center">MENU</h2>
+    </section>
+    <section id="contact">
+      <h2 class="tx-center">CONTACT</h2>
+    </section>
+    <section id="location">
+      <h2 class="tx-center">LOCATION</h2>
+    </section>
+    <section id="order">
+      <h2 class="tx-center">ORDER ONLINE</h2>
+    </section>
   </main>
 </Layout>
 
 <style>
+  [astro-icon] {
+    width: 24px;
+    height: 24px;
+  }
   /* main {
     margin: auto;
     padding: 1rem;
