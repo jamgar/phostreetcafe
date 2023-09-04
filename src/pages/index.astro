@@ -1,16 +1,15 @@
 ---
-import { Icon } from "astro-icon";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import HeroImage from "../assets/images/beef-pho-carousel.jpg";
+import SlideShow from "../components/SlideShow.astro";
 ---
 
 <Layout title="Pho Street Cafe">
   <main>
     <section id="hero">
       <Navigation />
-      <h1 class="tx-center">ORDER NOW</h1>
+      <SlideShow />
     </section>
     <section id="menu">
       <h2 class="tx-center">MENU</h2>
@@ -33,12 +32,12 @@ import HeroImage from "../assets/images/beef-pho-carousel.jpg";
     height: 24px;
   }
   #hero {
+    background-color: var(--base-dark);
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
       url("../assets/images/beef-pho-carousel.jpg");
     background-position: 20%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--base-dark);
     position: relative;
     height: 100vh;
     position: relative;
@@ -46,6 +45,15 @@ import HeroImage from "../assets/images/beef-pho-carousel.jpg";
   @media only screen and (min-width: 768px) {
     #hero {
       background-image: none;
+      background-color: #ffffff;
+      height: 60vh;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    #hero {
+      background-image: none;
+      background-color: #ffffff;
+      height: 70vh;
     }
   }
 </style>

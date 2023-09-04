@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+import BrandLogo from "../assets/images/psc-logo.png";
 ---
 
 <div id="sidenav" class="side-navigation">
@@ -11,7 +13,9 @@ import { Icon } from "astro-icon";
 </div>
 <div class="mobile-menu">
   <div class="brand">
-    <span>🍜</span>
+    <span class="brand-logo">
+      <Image src={BrandLogo} alt="Pho Street Cafe Logo" width={30} />
+    </span>
     <p>PHO STREET CAFE</p>
   </div>
   <button id="openbtn">&#9776;</button>
@@ -19,7 +23,9 @@ import { Icon } from "astro-icon";
 
 <div class="desktop-menu">
   <div class="brand">
-    <span>🍜</span>
+    <span class="brand-logo">
+      <Image src={BrandLogo} alt="Pho Street Cafe Logo" width={50} />
+    </span>
     <p>PHO STREET CAFE</p>
   </div>
   <nav>
@@ -105,6 +111,9 @@ import { Icon } from "astro-icon";
     color: var(--base-light);
     display: flex;
     font-weight: 600;
+  }
+  .brand-logo {
+    margin-right: 4px;
   }
   nav a,
   #ordernow a {

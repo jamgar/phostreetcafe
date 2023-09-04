@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets";
+import SlideOne from "../assets/images/beef-pho-carousel.jpg";
+import SlideTwo from "../assets/images/banh-mi-carousel.jpg";
+import SlideThree from "../assets/images/spicy-pho-carousel.jpg";
+---
+
+<div class="slideshow-container">
+  <div class="slide fade">
+    <Image src={SlideOne} alt="Beef Pho" />
+    <div class="caption">Beef Pho</div>
+  </div>
+
+  <div class="slide fade">
+    <Image src={SlideTwo} alt="Banh Mi" />
+    <div class="caption">Banh Mi</div>
+  </div>
+
+  <div class="slide fade">
+    <Image src={SlideThree} alt="Spicy Pho" />
+    <div class="caption">Spice Pho</div>
+  </div>
+</div>
+
+<style>
+  .slide {
+    display: none;
+  }
+  img {
+    vertical-align: middle;
+    height: auto;
+    width: 100%;
+  }
+  .slideshow-container {
+    display: none;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+  }
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  .caption {
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 300px;
+    left: 0;
+    padding: 10px 30px;
+    position: absolute;
+    text-transform: uppercase;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .slideshow-container {
+      display: block;
+      height: 500px;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .slideshow-container {
+      display: block;
+      height: 600px;
+    }
+    .caption {
+      padding: 15px 50px;
+    }
+  }
+</style>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+</script>
