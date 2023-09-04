@@ -66,7 +66,7 @@ import { Icon } from "astro-icon";
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     right: 0;
     background-color: var(--base-dark);
@@ -88,20 +88,21 @@ import { Icon } from "astro-icon";
   }
   #openbtn,
   #closebtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--base-light);
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 24px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
     padding-top: 12px;
   }
   #closebtn {
     margin-left: 50px;
-    color: var(--base-light);
   }
   .brand {
+    color: var(--base-light);
     display: flex;
     font-weight: 600;
   }
@@ -143,10 +144,18 @@ import { Icon } from "astro-icon";
       display: none;
     }
     .desktop-menu {
+      background-color: var(--base-light);
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       padding-left: 25px;
+      padding-bottom: 8px;
+    }
+    .desktop-menu nav a:hover {
+      color: #3a3a3a;
+    }
+    .brand {
+      color: var(--base-dark);
     }
   }
 </style>
