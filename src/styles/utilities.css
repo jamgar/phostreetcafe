@@ -1,3 +1,13 @@
 .tx-center {
   text-align: center;
 }
+.btn-light {
+  background-color: #FFFFFF;
+  color: var(--base-dark);
+  border: 1px solid var(--base-dark);
+}
+.btn-dark{
+  background-color: var(--base-dark);
+  color: #FFFFFF;
+  border: 1px solid var(--base-dark);
+}
