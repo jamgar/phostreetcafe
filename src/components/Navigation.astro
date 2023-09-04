@@ -110,6 +110,7 @@ import BrandLogo from "../assets/images/psc-logo.png";
   .brand {
     color: var(--base-light);
     display: flex;
+    align-items: center;
     font-weight: 600;
   }
   .brand-logo {
@@ -165,6 +166,12 @@ import BrandLogo from "../assets/images/psc-logo.png";
     }
     .brand {
       color: var(--base-dark);
+      font-size: 14px;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .brand {
+      font-size: 20px;
     }
   }
 </style>
