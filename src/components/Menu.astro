@@ -1,0 +1,52 @@
+<section id="menu">
+  <h2 class="tx-center">MENU</h2>
+  <div class="menu-container">
+    <div class="menu-button-group">
+      <a href="#" class="btn-dark">Appetizers</a>
+      <a href="#" class="btn-light">Pho</a>
+      <a href="#" class="btn-light">Entrees</a>
+      <a href="#" class="btn-light">Banh Mi</a>
+    </div>
+  </div>
+  <div class="mobile-menu-group">
+    <select>
+      <option value="1">Appetizers</option>
+      <option value="2">Pho</option>
+      <option value="3">Entrees</option>
+      <option value="4">Banh Mi</option>
+    </select>
+  </div>
+</section>
+
+<style>
+  #menu {
+    margin-top: 40px;
+  }
+  .menu-container {
+    margin: 0 auto;
+    max-width: 800px;
+    overflow-x: scroll;
+  }
+  .menu-button-group {
+    display: none;
+  }
+  .menu-button-group a {
+    border-radius: 6px;
+    display: inline-block;
+    padding: 8px 6px;
+    margin: 10px 8px;
+    min-width: 140px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  @media only screen and (min-width: 768px) {
+    .menu-button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    .mobile-menu-group {
+      display: none;
+    }
+  }
+</style>

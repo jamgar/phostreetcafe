@@ -60,6 +60,7 @@ import SlideThree from "../assets/images/spicy-pho-carousel.jpg";
   /* Next & previous buttons */
   .prev,
   .next {
+    visibility: hidden;
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -95,6 +96,10 @@ import SlideThree from "../assets/images/spicy-pho-carousel.jpg";
     }
   }
   @media only screen and (min-width: 768px) {
+    .prev,
+    .next {
+      visibility: visible;
+    }
     .slideshow-container {
       display: block;
       height: 500px;
