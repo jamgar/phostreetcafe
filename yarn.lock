@@ -494,10 +494,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.19.2.tgz#1205014625790c7ff0e471644a878a65d1e34ab0"
   integrity sha512-tcuhV7ncXBqbt/Ybf0IyrMcwVOAPDckMK9rXNHtF17UTK18OKLpg08glminN06pt2WCoALhXdLfSPbVvK/6fxw==
 
-"@fontsource/open-sans@^5.0.11":
-  version "5.0.11"
-  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-5.0.11.tgz#d3fbde63b257c81361a47336dd4f14015c23b3d5"
-  integrity sha512-H3asfQirkh9avht/qxeMFDhAxBzLi9qH0rQAAVv5TxmZL9vvmZc0e70Z6gXPem6BB1+gUsT9QSqgGqH60rpuuA==
+"@fontsource-variable/open-sans@^5.0.13":
+  version "5.0.13"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/open-sans/-/open-sans-5.0.13.tgz#5416b06d1cd74df938753538e9a2f0dfd17edad5"
+  integrity sha512-G/lTR5vVBcwRU0vkeYqFfX1UEqHfCG52ccdVgcjwSOcDvi5jQEL3ta212qA2rKwSdhmdei600yNburmYoT1wsg==
 
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"

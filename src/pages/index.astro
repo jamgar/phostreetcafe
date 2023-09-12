@@ -5,6 +5,11 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import SlideShow from "../components/SlideShow.astro";
 import Menu from "../components/Menu.astro";
+import Hours from "../components/Hours.astro";
+import Contact from "../components/Contact.astro";
+import OnlineOrder from "../components/OnlineOrder.astro";
+import Location from "../components/Location.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Pho Street Cafe">
@@ -25,15 +30,11 @@ import Menu from "../components/Menu.astro";
       </div>
     </section>
     <Menu />
-    <section id="contact">
-      <h2 class="tx-center">CONTACT</h2>
-    </section>
-    <section id="location">
-      <h2 class="tx-center">LOCATION</h2>
-    </section>
-    <section id="order">
-      <h2 class="tx-center">ORDER ONLINE</h2>
-    </section>
+    <Hours />
+    <Contact />
+    <OnlineOrder />
+    <Location />
+    <Footer />
   </main>
 </Layout>
 

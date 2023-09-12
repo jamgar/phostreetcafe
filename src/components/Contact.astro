@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<section id="contact">
+  <h2 class="tx-center">Contact</h2>
+  <div class="contact-info">
+    <p class="contact-info-icon">
+      <Icon name="call" />
+      <span>(972) 429-7212</span>
+    </p>
+    <p class="contact-info-icon">
+      <Icon name="location_on" />
+      <span>3483 FM 544 #110, Wylie, TX 75098</span>
+    </p>
+    <a href="mailto:info@phostreetcafe.com" class="contact-info-icon">
+      <Icon name="mail" />
+      <span>info@phostreetcafe.com</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  [astro-icon] {
+    width: 20px;
+    height: 20px;
+  }
+  #contact {
+    margin: 40px 0;
+    text-align: center;
+  }
+  #contact h2:first-child {
+    text-transform: uppercase;
+  }
+  .contact-info {
+    margin: 20px 0;
+  }
+  .contact-info p,
+  .contact-info a {
+    padding: 4px 0;
+  }
+  .contact-info a {
+    color: var(--base-dark);
+  }
+  .contact-info span {
+    margin-left: 6px;
+  }
+  .contact-info-icon {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+</style>
