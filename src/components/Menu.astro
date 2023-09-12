@@ -2,27 +2,46 @@
   <h2 class="tx-center">MENU</h2>
   <div class="menu-container">
     <div class="menu-button-group">
-      <a href="#" class="btn-dark">Appetizers</a>
-      <a href="#" class="btn-light">Pho</a>
-      <a href="#" class="btn-light">Entrees</a>
-      <a href="#" class="btn-light">Banh Mi</a>
+      <button class="menu-links btn-light active" data-menu="appetizers"
+        >Appetizers</button
+      >
+      <button class="menu-links btn-light" data-menu="pho">Pho</button>
+      <button class="menu-links btn-light" data-menu="entrees">Entrees</button>
+      <button class="menu-links btn-light" data-menu="banh-mi">Banh Mi</button>
     </div>
-  </div>
-  <div class="mobile-menu-group">
-    <select>
-      <option value="1">Appetizers</option>
-      <option value="2">Pho</option>
-      <option value="3">Entrees</option>
-      <option value="4">Banh Mi</option>
-    </select>
-  </div>
-  <div class="menu-items">
-    <div class="menu-item">
-      <div class="menu-item-info">
-        <div class="menu-item-header">
-          <h3>Viet Egg Rolls (2pcs)</h3>
-          <span>5.5</span>
-        </div>
+    <div id="appetizers" class="menu-content">
+      <div class="menu-content-header">
+        <h3>Viet Egg Rolls (2pcs)</h3>
+        <span>5.5</span>
+      </div>
+      <div class="menu-content-description">
+        <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
+      </div>
+    </div>
+    <div id="pho" class="menu-content">
+      <div class="menu-content-header">
+        <h3>Pho</h3>
+        <span>5.5</span>
+      </div>
+      <div class="menu-content-description">
+        <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
+      </div>
+    </div>
+    <div id="entrees" class="menu-content">
+      <div class="menu-content-header">
+        <h3>Entrees</h3>
+        <span>5.5</span>
+      </div>
+      <div class="menu-content-description">
+        <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
+      </div>
+    </div>
+    <div id="banh-mi" class="menu-content">
+      <div class="menu-content-header">
+        <h3>Banh-mi</h3>
+        <span>5.5</span>
+      </div>
+      <div class="menu-content-description">
         <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
       </div>
     </div>
@@ -31,19 +50,21 @@
 
 <style>
   #menu {
-    margin-top: 40px;
+    margin: 40px 0;
   }
   .menu-container {
-    margin: 0 auto;
-    max-width: 800px;
-    overflow-x: scroll;
+    margin: 20px;
   }
   .menu-button-group {
     /* display: none; */
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    max-width: 800px;
+    overflow-x: auto;
   }
-  .menu-button-group a {
+  .menu-button-group button {
     border-radius: 6px;
     display: inline-block;
     padding: 8px 6px;
@@ -53,18 +74,27 @@
     text-align: center;
     text-transform: uppercase;
   }
-  .mobile-menu-group {
-    padding: 10px 20px;
+  .menu-button-group button.active {
+    background-color: var(--base-dark);
+    color: #ffffff;
+    border: 1px solid var(--base-dark);
   }
-  .mobile-menu-group select {
-    width: 100%;
+  .menu-content {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
   }
-  .menu-item {
-    margin: 10px 20px;
-  }
-  .menu-item-header {
+  .menu-content-header {
     display: flex;
     justify-content: space-between;
+  }
+
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -72,8 +102,34 @@
       display: flex;
       justify-content: space-between;
     }
-    .mobile-menu-group {
-      display: none;
-    }
   }
 </style>
+
+<script>
+  const menuLinks = document.querySelectorAll(".menu-links");
+  const menuContent = document.querySelectorAll(".menu-content");
+
+  menuContent.forEach((content) => {
+    content.style.display = "none";
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const menu = e.target.dataset.menu;
+      removeActiveClass();
+      menuContent.forEach((content) => {
+        content.style.display = "none";
+      });
+      link.classList.add("active");
+      document.getElementById(menu).style.display = "block";
+    });
+  });
+
+  menuContent[0].style.display = "block";
+
+  const removeActiveClass = () => {
+    menuLinks.forEach((link) => {
+      link.classList.remove("active");
+    });
+  };
+</script>
