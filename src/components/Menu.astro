@@ -6,6 +6,10 @@ import spicySymbol from "../assets/images/spicy-symbol.png";
 import vegetarianSymbol from "../assets/images/vegetarian-symbol.png";
 import potStickersMenu from "../assets/images/pot-stickers-menu.jpg";
 import springRollsMenu from "../assets/images/spring-rolls-menu.jpg";
+import beefPhoMenu from "../assets/images/beef-pho-menu.jpg";
+import grilledPortMenu from "../assets/images/grilled-pork-menu.jpg";
+import grilledChickenMenu from "../assets/images/grilled-chicken-menu.jpg";
+import banhMiMenu from "../assets/images/banh-mi-menu.jpg";
 ---
 
 <section id="menu">
@@ -30,7 +34,10 @@ import springRollsMenu from "../assets/images/spring-rolls-menu.jpg";
       </div>
       <MenuImage url={springRollsMenu} caption="Shrimp Spring Roll" />
     </div>
+
     <div id="pho" class="menu-content">
+      <p class="image-note">Pho is served with bean sprouts, Thai basil, jalapeno and lime</p>
+      <MenuImage url={beefPhoMenu} caption="Beef Pho" />
       <div class="menu-content-header">
         <h3>Pho</h3>
         <span>5.5</span>
@@ -39,6 +46,7 @@ import springRollsMenu from "../assets/images/spring-rolls-menu.jpg";
         <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
       </div>
     </div>
+
     <div id="entrees" class="menu-content">
       <div class="menu-content-header">
         <h3>Entrees</h3>
@@ -47,7 +55,10 @@ import springRollsMenu from "../assets/images/spring-rolls-menu.jpg";
       <div class="menu-content-description">
         <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
       </div>
+      <MenuImage url={grilledPortMenu} caption="Lemongrass Grilled Pork Vermicelli" />
+      <MenuImage url={grilledChickenMenu} caption="Grilled Chicken with Steamed Rice" />
     </div>
+
     <div id="banh-mi" class="menu-content">
       <div class="menu-content-header">
         <h3>Banh-mi</h3>
@@ -56,6 +67,7 @@ import springRollsMenu from "../assets/images/spring-rolls-menu.jpg";
       <div class="menu-content-description">
         <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
       </div>
+      <MenuImage url={banhMiMenu} caption="Grilled Pork Banh Mi" />
     </div>
     <div class="legend">
       <div class="legend-info">
@@ -123,6 +135,11 @@ import springRollsMenu from "../assets/images/spring-rolls-menu.jpg";
   }
   .legend-info span {
     margin-left: 5px;
+  }
+  .image-note {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 10px;
   }
 
   /* Go from zero to full opacity */

@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import MenuImage from "../components/MenuImage.astro";
+
+import banhMi from "../assets/images/banh-mi.jpg";
+import lemongrassTofu from "../assets/images/lemongrass-tofu.jpg";
+import streetSpecial from "../assets/images/street-special-rice-plate.jpg";
+import spicyPho from "../assets/images/spicy-pho.jpg";
+---
+
+<section id="image-gallery" class="image-row">
+  <div class="image-column">
+    <div class="image-spacing">
+      <MenuImage
+        url={banhMi}
+        caption="Pork Roll Banh Mi & Grilled Pork Banh Mi"
+        class="image-food"
+      />
+    </div>
+    <div class="image-spacing">
+      <MenuImage
+        url={streetSpecial}
+        caption="Street Special Rice Plate"
+        class="image-food"
+      />
+    </div>
+  </div>
+  <div class="image-column">
+    <div class="image-spacing">
+      <MenuImage
+        url={lemongrassTofu}
+        caption="Lemongrass Tofu"
+        class="image-food"
+      />
+    </div>
+    <div class="image-spacing">
+      <MenuImage url={spicyPho} caption="Curry Pho" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .image-row {
+    display: none;
+  }
+  @media only screen and (min-width: 768px) {
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+    .image-column {
+      flex: 50%;
+      padding: 0 4px;
+    }
+    .image-spacing {
+      margin: 8px 0;
+    }
+  }
+</style>
