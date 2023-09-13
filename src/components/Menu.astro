@@ -1,3 +1,13 @@
+---
+import { Image } from "astro:assets";
+import MenuImage from "./MenuImage.astro";
+
+import spicySymbol from "../assets/images/spicy-symbol.png";
+import vegetarianSymbol from "../assets/images/vegetarian-symbol.png";
+import potStickersMenu from "../assets/images/pot-stickers-menu.jpg";
+import springRollsMenu from "../assets/images/spring-rolls-menu.jpg";
+---
+
 <section id="menu">
   <h2 class="tx-center">Menu</h2>
   <div class="menu-container">
@@ -10,6 +20,7 @@
       <button class="menu-links btn-light" data-menu="banh-mi">Banh Mi</button>
     </div>
     <div id="appetizers" class="menu-content">
+      <MenuImage url={potStickersMenu} caption="Pork Fried Pot Stickers" />
       <div class="menu-content-header">
         <h3>Viet Egg Rolls (2pcs)</h3>
         <span>5.5</span>
@@ -17,6 +28,7 @@
       <div class="menu-content-description">
         <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
       </div>
+      <MenuImage url={springRollsMenu} caption="Shrimp Spring Roll" />
     </div>
     <div id="pho" class="menu-content">
       <div class="menu-content-header">
@@ -43,6 +55,16 @@
       </div>
       <div class="menu-content-description">
         <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
+      </div>
+    </div>
+    <div class="legend">
+      <div class="legend-info">
+        <Image src={spicySymbol} alt="spicy" width="20" />
+        <span>Spicy</span>
+      </div>
+      <div class="legend-info">
+        <Image src={vegetarianSymbol} alt="spicy" width="20" />
+        <span>Vegetarian</span>
       </div>
     </div>
   </div>
@@ -87,6 +109,20 @@
   .menu-content-header {
     display: flex;
     justify-content: space-between;
+  }
+  .legend {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .legend-info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-right: 15px;
+  }
+  .legend-info span {
+    margin-left: 5px;
   }
 
   /* Go from zero to full opacity */
