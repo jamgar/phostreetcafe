@@ -2,25 +2,29 @@
 import { Icon } from "astro-icon";
 import { Image } from "astro:assets";
 import BrandLogo from "../assets/images/psc-logo.png";
+
+const year = new Date().getFullYear();
 ---
 
-<section id="footer">
+<footer id="footer">
   <div class="container">
     <div class="column">
       <h3>Pho Street Cafe</h3>
-      <a href="#menu">Menu</a>
-      <a href="#location">Location</a>
-      <a href="#contact">Contact</a>
+      <div class="footer-menu">
+        <a href="#menu">Menu</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
     <div class="column">
       <span class="brand-logo">
         <Image src={BrandLogo} alt="Pho Street Cafe Logo" width={30} />
       </span>
       <div class="contact-info">
-        <p class="contact-info-icon">
+        <a href="tel:+19724297212" class="contact-info-icon">
           <Icon name="call" />
           <span>(972) 429-7212</span>
-        </p>
+        </a>
         <p class="contact-info-icon">
           <Icon name="location_on" />
           <span>3483 FM 544 #110, Wylie, TX 75098</span>
@@ -32,12 +36,16 @@ import BrandLogo from "../assets/images/psc-logo.png";
       </div>
     </div>
   </div>
-</section>
+  <div class="copy-right">
+    <p>&copy; {year} Pho Street Cafe. All Rights Reserved.</p>
+  </div>
+</footer>
 
 <style>
   [astro-icon] {
     width: 20px;
     height: 20px;
+    fill: var(--base-light);
   }
   .brand-logo {
     display: flex;
@@ -52,6 +60,9 @@ import BrandLogo from "../assets/images/psc-logo.png";
     padding: 1rem;
   }
   .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     margin: 20px 0;
   }
   .contact-info p,
@@ -59,7 +70,8 @@ import BrandLogo from "../assets/images/psc-logo.png";
     padding: 4px 0;
   }
   .contact-info a {
-    color: var(--base-dark);
+    color: var(--base-light);
+    text-decoration: none;
   }
   .contact-info span {
     margin-left: 6px;
@@ -68,5 +80,23 @@ import BrandLogo from "../assets/images/psc-logo.png";
     align-items: center;
     justify-content: center;
     display: flex;
+  }
+  .footer-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-menu a {
+    text-decoration: none;
+    color: var(--base-light);
+  }
+  .footer-menu a:hover {
+    color: lightgray;
+  }
+  .copy-right {
+    background-color: var(--base-dark);
+    color: var(--base-light);
+    font-size: 12px;
+    text-align: center;
+    padding: 20px;
   }
 </style>

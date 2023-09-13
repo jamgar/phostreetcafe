@@ -5,10 +5,10 @@ import { Icon } from "astro-icon";
 <section id="contact">
   <h2 class="tx-center">Contact</h2>
   <div class="contact-info">
-    <p class="contact-info-icon">
+    <a href="tel:+19724297212" class="contact-info-icon">
       <Icon name="call" />
       <span>(972) 429-7212</span>
-    </p>
+    </a>
     <p class="contact-info-icon">
       <Icon name="location_on" />
       <span>3483 FM 544 #110, Wylie, TX 75098</span>
@@ -41,6 +41,7 @@ import { Icon } from "astro-icon";
   }
   .contact-info a {
     color: var(--base-dark);
+    text-decoration: none;
   }
   .contact-info span {
     margin-left: 6px;
