@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import MenuImage from "./MenuImage.astro";
+import MenuItem from "./MenuItem.astro";
+
+import appetizers from "../data/appetizers.js";
 
 import spicySymbol from "../assets/images/spicy-symbol.png";
 import vegetarianSymbol from "../assets/images/vegetarian-symbol.png";
@@ -10,6 +13,9 @@ import beefPhoMenu from "../assets/images/beef-pho-menu.jpg";
 import grilledPortMenu from "../assets/images/grilled-pork-menu.jpg";
 import grilledChickenMenu from "../assets/images/grilled-chicken-menu.jpg";
 import banhMiMenu from "../assets/images/banh-mi-menu1.jpg";
+
+const appsColumnOne = appetizers.slice(0, 3);
+const appsColumnTwo = appetizers.slice(3, 8);
 ---
 
 <section id="menu">
@@ -24,15 +30,30 @@ import banhMiMenu from "../assets/images/banh-mi-menu1.jpg";
       <button class="menu-links btn-light" data-menu="banh-mi">Banh Mi</button>
     </div>
     <div id="appetizers" class="menu-content">
-      <MenuImage url={potStickersMenu} caption="Pork Fried Pot Stickers" />
-      <div class="menu-content-header">
-        <h3>Viet Egg Rolls (2pcs)</h3>
-        <span>5.5</span>
+      <div class="menu-row">
+        <div class="menu-column">
+          <MenuImage url={potStickersMenu} caption="Pork Fried Pot Stickers" />
+          {appsColumnOne.map((app) => (
+            <MenuItem
+              name={app.name}
+              description={app.description}
+              price={app.price}
+              legend={app.legend}
+            />
+          ))}
+        </div>
+        <div class="menu-column">
+          {appsColumnTwo.map((app) => (
+            <MenuItem
+              name={app.name}
+              description={app.description}
+              price={app.price}
+              legend={app.legend}
+            />
+          ))}
+          <MenuImage url={springRollsMenu} caption="Shrimp Spring Roll" />
+        </div>
       </div>
-      <div class="menu-content-description">
-        <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
-      </div>
-      <MenuImage url={springRollsMenu} caption="Shrimp Spring Roll" />
     </div>
 
     <div id="pho" class="menu-content">
@@ -126,10 +147,10 @@ import banhMiMenu from "../assets/images/banh-mi-menu1.jpg";
   .menu-content {
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
   }
-  .menu-content-header {
+  /* .menu-content-header {
     display: flex;
     justify-content: space-between;
-  }
+  } */
   .legend {
     display: flex;
     justify-content: flex-end;
@@ -149,6 +170,25 @@ import banhMiMenu from "../assets/images/banh-mi-menu1.jpg";
     font-style: italic;
     margin-bottom: 10px;
   }
+  .menu-row {
+    display: block;
+  }
+  @media only screen and (min-width: 768px) {
+    .menu-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+    .menu-column {
+      flex: 50%;
+      /* padding: 0 4px; */
+    }
+    .menu-column:first-child {
+      padding-right: 15px;
+    }
+    .menu-column:last-child {
+      padding-left: 15px;
+    }
 
   /* Go from zero to full opacity */
   @keyframes fadeEffect {

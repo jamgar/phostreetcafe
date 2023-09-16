@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import spicy from "../assets/images/spicy-symbol.png";
+import vegetarian from "../assets/images/vegetarian-symbol.png";
+
+const { symbol } = Astro.props;
+---
+
+<div>
+  {symbol == "spicy" ? <Image src={spicy} alt="spicy" width="20" /> : ""}
+  {
+    symbol == "vegetarian" ? (
+      <Image src={vegetarian} alt="vegetarian" width="20" />
+    ) : (
+      ""
+    )
+  }
+</div>

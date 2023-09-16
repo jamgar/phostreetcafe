@@ -1,0 +1,60 @@
+---
+import LegendIcon from "../components/LegendIcon.astro";
+
+const { name, description, price, legend } = Astro.props;
+---
+
+<div class="menu-item-container">
+  <div class="menu-item-column column-1">
+    <div class="menu-item-desktop">
+      <LegendIcon symbol={legend} />
+    </div>
+  </div>
+  <div class="menu-item-column column-2">
+    <div class="menu-item-header">
+      <h3>{name}</h3>
+      <span>{price}</span>
+    </div>
+    <div class="menu-item-description">
+      <p>{description}</p>
+    </div>
+  </div>
+</div>
+<div class="menu-item-mobile">
+  <LegendIcon symbol={legend} />
+</div>
+
+<style>
+  .menu-item-container {
+    margin-top: 25px;
+  }
+  .menu-item-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu-item-header h3 {
+    font-weight: 300;
+  }
+  .menu-item-desktop {
+    display: none;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .menu-item-container {
+      display: flex;
+    }
+    .column-1 {
+      width: 25px;
+    }
+    .column-2 {
+      width: 100%;
+    }
+    .menu-item-desktop {
+      display: block;
+      padding-top: 6px;
+    }
+    .menu-item-mobile {
+      display: none;
+    }
+  }
+</style>
