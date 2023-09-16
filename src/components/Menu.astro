@@ -29,6 +29,16 @@ const appsColumnTwo = appetizers.slice(3, 8);
       <button class="menu-links btn-light" data-menu="entrees">Entrees</button>
       <button class="menu-links btn-light" data-menu="banh-mi">Banh Mi</button>
     </div>
+    <div class="legend-mobile">
+      <div class="legend-info">
+        <Image src={spicySymbol} alt="spicy" width="20" />
+        <span>Spicy</span>
+      </div>
+      <div class="legend-info">
+        <Image src={vegetarianSymbol} alt="spicy" width="20" />
+        <span>Vegetarian</span>
+      </div>
+    </div>
     <div id="appetizers" class="menu-content">
       <div class="menu-row">
         <div class="menu-column">
@@ -98,7 +108,7 @@ const appsColumnTwo = appetizers.slice(3, 8);
       </div>
       <MenuImage url={banhMiMenu} caption="Grilled Pork Banh Mi" />
     </div>
-    <div class="legend">
+    <div class="legend-desktop">
       <div class="legend-info">
         <Image src={spicySymbol} alt="spicy" width="20" />
         <span>Spicy</span>
@@ -147,14 +157,12 @@ const appsColumnTwo = appetizers.slice(3, 8);
   .menu-content {
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
   }
-  /* .menu-content-header {
+  .legend-mobile {
     display: flex;
-    justify-content: space-between;
-  } */
-  .legend {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+    margin: 20px 0;
+  }
+  .legend-desktop {
+    display: none;
   }
   .legend-info {
     display: flex;
@@ -181,13 +189,20 @@ const appsColumnTwo = appetizers.slice(3, 8);
     }
     .menu-column {
       flex: 50%;
-      /* padding: 0 4px; */
     }
     .menu-column:first-child {
       padding-right: 15px;
     }
     .menu-column:last-child {
       padding-left: 15px;
+    }
+    .legend-mobile {
+      display: none;
+    }
+    .legend-desktop {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
     }
 
   /* Go from zero to full opacity */
