@@ -4,6 +4,7 @@ import MenuImage from "./MenuImage.astro";
 import MenuItem from "./MenuItem.astro";
 
 import appetizers from "../data/appetizers.js";
+import pho from "../data/pho.js";
 
 import spicySymbol from "../assets/images/spicy-symbol.png";
 import vegetarianSymbol from "../assets/images/vegetarian-symbol.png";
@@ -16,6 +17,7 @@ import banhMiMenu from "../assets/images/banh-mi-menu1.jpg";
 
 const appsColumnOne = appetizers.slice(0, 3);
 const appsColumnTwo = appetizers.slice(3, 8);
+
 ---
 
 <section id="menu">
@@ -42,12 +44,15 @@ const appsColumnTwo = appetizers.slice(3, 8);
     <div id="appetizers" class="menu-content">
       <div class="menu-row">
         <div class="menu-column">
-          <MenuImage url={potStickersMenu} caption="Pork Fried Pot Stickers" />
+          <div class="menu-image">
+            <MenuImage url={potStickersMenu} caption="Pork Fried Pot Stickers" />
+          </div>
           {appsColumnOne.map((app) => (
             <MenuItem
               name={app.name}
               description={app.description}
-              price={app.price}
+              price_1={app.price_1}
+              price_2={app.price_2}
               legend={app.legend}
             />
           ))}
@@ -57,45 +62,70 @@ const appsColumnTwo = appetizers.slice(3, 8);
             <MenuItem
               name={app.name}
               description={app.description}
-              price={app.price}
+              price_1={app.price_1}
+              price_2={app.price_2}
               legend={app.legend}
             />
           ))}
-          <MenuImage url={springRollsMenu} caption="Shrimp Spring Roll" />
+          <div class="menu-image">
+            <MenuImage url={springRollsMenu} caption="Shrimp Spring Roll" />
+          </div>
         </div>
       </div>
     </div>
 
     <div id="pho" class="menu-content">
-      <p class="image-note">
-        Pho is served with bean sprouts, Thai basil, jalapeno and lime
-      </p>
-      <MenuImage url={beefPhoMenu} caption="Beef Pho" />
-      <div class="menu-content-header">
-        <h3>Pho</h3>
-        <span>10.5</span>
-      </div>
-      <div class="menu-content-description">
-        <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
+      <div class="menu-row">
+        <div class="menu-column">
+          <p class="menu-note">
+            Pho is served with bean sprouts, Thai basil, jalapeno and lime
+          </p>
+          <MenuImage url={beefPhoMenu} caption="Beef Pho" />
+        </div>
+        <div class="menu-column">
+          <div class="pho-size">
+            <span>Regular</span>
+            <span>Large</span>
+          </div>
+          {pho.map((p) => (
+            <MenuItem
+              name={p.name}
+              description={p.description}
+              price_1={p.price_1}
+              price_2={p.price_2}
+              legend={p.legend}
+            />
+          ))}
+        </div>
       </div>
     </div>
 
     <div id="entrees" class="menu-content">
-      <div class="menu-content-header">
-        <h3>Entrees</h3>
-        <span>5.5</span>
+      <div class="menu-row">
+        <div class="menu-column">
+          <p class="menu-note">
+            Served with rice or vermicelli
+          </p>
+          <!-- {pho.map((p) => (
+            <MenuItem
+              name={p.name}
+              description={p.description}
+              price={p.price}
+              legend={p.legend}
+            />
+          ))} -->
+          <MenuImage
+            url={grilledPortMenu}
+            caption="Lemongrass Grilled Pork Vermicelli"
+          />
+        </div>
+        <div class="menu-column">
+          <MenuImage
+            url={grilledChickenMenu}
+            caption="Grilled Chicken with Steamed Rice"
+          />
+        </div>
       </div>
-      <div class="menu-content-description">
-        <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
-      </div>
-      <MenuImage
-        url={grilledPortMenu}
-        caption="Lemongrass Grilled Pork Vermicelli"
-      />
-      <MenuImage
-        url={grilledChickenMenu}
-        caption="Grilled Chicken with Steamed Rice"
-      />
     </div>
 
     <div id="banh-mi" class="menu-content">
@@ -173,7 +203,7 @@ const appsColumnTwo = appetizers.slice(3, 8);
   .legend-info span {
     margin-left: 5px;
   }
-  .image-note {
+  .menu-note {
     font-size: 12px;
     font-style: italic;
     margin-bottom: 10px;
@@ -181,20 +211,33 @@ const appsColumnTwo = appetizers.slice(3, 8);
   .menu-row {
     display: block;
   }
+  .menu-image {
+    margin-top: 20px;
+  }
+  .pho-size {
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+    column-gap: 16px;
+  }
   @media only screen and (min-width: 768px) {
+   .menu-container {
+      margin: 20px auto;
+      max-width: 768px;
+    }
     .menu-row {
       display: flex;
       flex-wrap: wrap;
-      margin: 20px;
+      margin: 60px 0 20px 0;
     }
     .menu-column {
       flex: 50%;
     }
     .menu-column:first-child {
-      padding-right: 15px;
+      padding-right: 20px;
     }
     .menu-column:last-child {
-      padding-left: 15px;
+      padding-left: 20px;
     }
     .legend-mobile {
       display: none;
@@ -204,6 +247,12 @@ const appsColumnTwo = appetizers.slice(3, 8);
       justify-content: flex-end;
       margin-top: 20px;
     }
+  @media only screen and (min-width: 1024px) {
+   .menu-container {
+      margin: 20px auto;
+      max-width: 1024px;
+    }
+  }
 
   /* Go from zero to full opacity */
   @keyframes fadeEffect {

@@ -1,7 +1,7 @@
 ---
 import LegendIcon from "../components/LegendIcon.astro";
 
-const { name, description, price, legend } = Astro.props;
+const { name, description, price_1, price_2, legend } = Astro.props;
 ---
 
 <div class="menu-item-container">
@@ -12,8 +12,11 @@ const { name, description, price, legend } = Astro.props;
   </div>
   <div class="menu-item-column column-2">
     <div class="menu-item-header">
-      <h3>{name}</h3>
-      <span>{price}</span>
+      <p>{name}</p>
+      <div class="menu-item-prices">
+        <span class={price_2 ? "menu-item-price-2" : ""}>{price_1}</span>
+        {price_2 ? <span>{price_2}</span> : ""}
+      </div>
     </div>
     <div class="menu-item-description">
       <p>{description}</p>
@@ -32,11 +35,21 @@ const { name, description, price, legend } = Astro.props;
     display: flex;
     justify-content: space-between;
   }
-  .menu-item-header h3 {
-    font-weight: 300;
+  .menu-item-header {
+    font-family: "LemonMilk", system-ui, sans-serif;
+    font-weight: 400;
   }
   .menu-item-desktop {
     display: none;
+  }
+  .menu-item-prices {
+    display: flex;
+    width: 100px;
+    flex: none;
+    justify-content: end;
+  }
+  .menu-item-price-2 {
+    margin-right: 14px;
   }
 
   @media only screen and (min-width: 768px) {
