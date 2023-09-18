@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import SlideOne from "../assets/images/beef-pho-carousel.jpg";
-import SlideTwo from "../assets/images/banh-mi-carousel.png";
+import SlideTwo from "../assets/images/banh-mi-carousel.jpg";
 import SlideThree from "../assets/images/spicy-pho-carousel.jpg";
+import SlideFour from "../assets/images/tofu-carousel2.png";
 ---
 
 <div class="slideshow-container">
@@ -10,15 +11,17 @@ import SlideThree from "../assets/images/spicy-pho-carousel.jpg";
     <Image src={SlideOne} alt="Beef Pho" />
     <div class="caption">Beef Pho</div>
   </div>
-
   <div class="slide fade">
     <Image src={SlideTwo} alt="Banh Mi" />
     <div class="caption">Banh Mi</div>
   </div>
-
   <div class="slide fade">
     <Image src={SlideThree} alt="Spicy Pho" />
     <div class="caption">Spice Pho</div>
+  </div>
+  <div class="slide fade">
+    <Image src={SlideFour} alt="Stir-Fry Tofu" class="slide-image" />
+    <div class="caption">Stir-Fry Tofu</div>
   </div>
 </div>
 
