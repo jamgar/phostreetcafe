@@ -5,6 +5,8 @@ import MenuItem from "./MenuItem.astro";
 
 import appetizers from "../data/appetizers.js";
 import pho from "../data/pho.js";
+import entrees from "../data/entrees.js";
+import banhMi from "../data/banh-mi.js";
 
 import spicySymbol from "../assets/images/spicy-symbol.png";
 import vegetarianSymbol from "../assets/images/vegetarian-symbol.png";
@@ -15,8 +17,11 @@ import grilledPortMenu from "../assets/images/grilled-pork-menu.jpg";
 import grilledChickenMenu from "../assets/images/grilled-chicken-menu.jpg";
 import banhMiMenu from "../assets/images/banh-mi-menu1.jpg";
 
-const appsColumnOne = appetizers.slice(0, 3);
-const appsColumnTwo = appetizers.slice(3, 8);
+const appsColumnOne = appetizers.slice(0, 4);
+const appsColumnTwo = appetizers.slice(4, 9);
+
+const entreesColumnOne = entrees.slice(0, 7);
+const entreesColumnTwo = entrees.slice(7, 14);
 
 ---
 
@@ -106,37 +111,60 @@ const appsColumnTwo = appetizers.slice(3, 8);
           <p class="menu-note">
             Served with rice or vermicelli
           </p>
-          <!-- {pho.map((p) => (
+          {entreesColumnOne.map((entree) => (
             <MenuItem
-              name={p.name}
-              description={p.description}
-              price={p.price}
-              legend={p.legend}
+              name={entree.name}
+              description={entree.description}
+              price_1={entree.price_1}
+              price_2={entree.price_2}
+              legend={entree.legend}
             />
-          ))} -->
-          <MenuImage
-            url={grilledPortMenu}
-            caption="Lemongrass Grilled Pork Vermicelli"
-          />
+          ))}
+          <div class="menu-image">
+            <MenuImage
+              url={grilledPortMenu}
+              caption="Lemongrass Grilled Pork Vermicelli"
+            />
+          </div>
         </div>
         <div class="menu-column">
+          <p class="menu-note">
+            **Vermicelli dishes garnished with crushed peanuts
+          </p>
           <MenuImage
             url={grilledChickenMenu}
             caption="Grilled Chicken with Steamed Rice"
           />
+          {entreesColumnTwo.map((entree) => (
+            <MenuItem
+              name={entree.name}
+              description={entree.description}
+              price_1={entree.price_1}
+              price_2={entree.price_2}
+              legend={entree.legend}
+            />
+          ))}
         </div>
       </div>
     </div>
 
     <div id="banh-mi" class="menu-content">
-      <div class="menu-content-header">
-        <h3>Banh-mi</h3>
-        <span>5.5</span>
+      <div class="menu-row">
+        <div class="menu-column">
+          {banhMi.map((b) => (
+            <MenuItem
+              name={b.name}
+              description={b.description}
+              price_1={b.price_1}
+              price_2={b.price_2}
+              legend={b.legend}
+            />
+          ))}
+        </div>
+        <div class="menu-column">
+          <MenuImage url={banhMiMenu} caption="Grilled Pork Banh Mi" />
+        </div>
       </div>
-      <div class="menu-content-description">
-        <p>Pork, shrimp, taro, & bean thread noodle in egg roll wrapper</p>
-      </div>
-      <MenuImage url={banhMiMenu} caption="Grilled Pork Banh Mi" />
     </div>
     <div class="legend-desktop">
       <div class="legend-info">
