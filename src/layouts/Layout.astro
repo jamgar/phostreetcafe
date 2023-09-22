@@ -35,6 +35,8 @@ const { title } = Astro.props;
     position: fixed;
     bottom: 20px;
     right: 30px;
+    /* top: 20px;
+    left: 16px; */
     z-index: 99;
     font-size: 18px;
     border: none;
@@ -63,7 +65,7 @@ const { title } = Astro.props;
   function scrollFunction() {
     if (
       document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
+      document.documentElement.scrollTop > 24
     ) {
       scrollBtn.style.display = "block";
     } else {
