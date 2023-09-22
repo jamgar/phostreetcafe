@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import BrandLogo from "../assets/images/psc-logo.png";
 ---
 
-<div class="desktop-menu">
+<div id="navbar-desktop" class="desktop-menu">
   <div class="brand">
     <span class="brand-logo">
       <Image src={BrandLogo} alt="Pho Street Cafe Logo" width={50} />
@@ -124,6 +124,11 @@ import BrandLogo from "../assets/images/psc-logo.png";
     font-weight: 700;
     margin-top: -20px;
   }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 
   @media only screen and (min-width: 768px) {
     .desktop-menu {
@@ -133,6 +138,7 @@ import BrandLogo from "../assets/images/psc-logo.png";
       align-items: flex-end;
       padding-left: 25px;
       padding-bottom: 8px;
+      z-index: 100;
     }
     .desktop-menu nav a:hover {
       color: #3a3a3a;
@@ -148,3 +154,7 @@ import BrandLogo from "../assets/images/psc-logo.png";
     }
   }
 </style>
+
+<script>
+  import "../scripts/scroll";
+</script>
