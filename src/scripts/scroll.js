@@ -46,7 +46,7 @@
 
   function stickyNavbar() {
     let w = window.innerWidth;
-    if (window.pageYOffset >= sticky && w >= 768) {
+    if (window.scrollY >= sticky && w >= 768) {
       navbar.classList.add("sticky");
     } else {
       navbar.classList.remove("sticky");

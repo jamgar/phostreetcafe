@@ -6,9 +6,9 @@ import BrandLogo from "../assets/images/psc-logo.png";
 
 <div id="navbar-desktop" class="desktop-menu">
   <div class="brand">
-    <span class="brand-logo">
+    <a href="#hero" class="brand-logo">
       <Image src={BrandLogo} alt="Pho Street Cafe Logo" width={50} />
-    </span>
+    </a>
     <p>PHO STREET CAFE</p>
   </div>
   <nav>
@@ -125,9 +125,10 @@ import BrandLogo from "../assets/images/psc-logo.png";
     margin-top: -20px;
   }
   .sticky {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
+    z-index: 100;
   }
 
   @media only screen and (min-width: 768px) {
@@ -138,7 +139,6 @@ import BrandLogo from "../assets/images/psc-logo.png";
       align-items: flex-end;
       padding-left: 25px;
       padding-bottom: 8px;
-      z-index: 100;
     }
     .desktop-menu nav a:hover {
       color: #3a3a3a;
