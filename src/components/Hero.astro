@@ -1,0 +1,98 @@
+---
+import { Icon } from "astro-icon";
+import Navigation from "../components/Navigation.astro";
+import NavigationMobile from "./NavigationMobile.astro";
+import SlideShow from "../components/SlideShow.astro";
+---
+
+<section id="hero">
+  <div class="hero-mobile">
+    <NavigationMobile />
+    <div class="hero-cta">
+      <h2>Order Now</h2>
+      <a href="tel:+19724297212" class="btn-light">
+        <div class="hero-btn-call">
+          <Icon class="icon" name="call" />
+          <span>(972) 429-7212</span>
+        </div>
+      </a>
+      <a href="https://go.lavutogo.com/phostreetcafe" class="btn-light">
+        <span>Order Online</span>
+      </a>
+      <a
+        href="https://www.ubereats.com/store/pho-street-cafe/E0prjAv6Qhy5GndiOh1Prg"
+        class="btn-light btn-uber"
+      >
+        <span>Uber</span>
+        <span>Eats</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-desktop">
+    <Navigation />
+    <SlideShow />
+  </div>
+</section>
+
+<style>
+  [astro-icon] {
+    width: 24px;
+    height: 24px;
+  }
+  .hero-mobile {
+    background-color: var(--base-dark);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("../assets/images/beef-pho-carousel.jpg");
+    background-position: 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-mobile a {
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    padding: 14px 8px;
+    margin: 10px 0;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .hero-mobile a img {
+    margin: 0 auto;
+  }
+  .hero-cta {
+    margin: 150px 50px;
+  }
+  .hero-btn-call {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .hero-mobile h2 {
+    color: var(--base-light);
+    letter-spacing: 2px;
+    font-size: 32px;
+    margin: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .btn-uber span:first-child {
+    font-weight: 400;
+  }
+  .btn-uber span:last-child {
+    font-weight: 700;
+    margin-top: -20px;
+  }
+  @media only screen and (min-width: 768px) {
+    .hero-mobile {
+      background-image: none;
+      background-color: #ffffff;
+      display: none;
+    }
+  }
+</style>

@@ -37,16 +37,16 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Mobile */
 body{
   font-family: 'Open Sans Variable', system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 h1, h2, h3, h4, button {
   font-family: 'LemonMilk', system-ui, sans-serif;
 }
 h1 {
-  font-size: 34px;
+  font-size: 36px;
 }
 h2 {
-  font-size: 18px;
+  font-size: 20px;
 }
 h3 {
   font-size: 16px;
@@ -56,7 +56,7 @@ h4 {
 }
 a {
   font-family: 'Open Sans Variable', system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 button {
