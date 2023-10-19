@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import BrandLogo from "../assets/images/psc-logo.png";
 import Navigation from "../components/Navigation.astro";
 import NavigationMobile from "../components/NavigationMobile.astro";
+import OrderModal from "../components/OrderModal.astro";
 
 interface Props {
   title: string;
@@ -24,11 +25,13 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <!-- Trigger/Open The Modal -->
     <button id="scrollToTop" title="Go to top">
       <Image src={BrandLogo} alt="Pho Street Cafe Logo" width={30} />
     </button>
     <Navigation />
     <slot />
+    <OrderModal />
   </body>
 </html>
 

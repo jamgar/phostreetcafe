@@ -15,16 +15,9 @@ import SlideShow from "../components/SlideShow.astro";
           <span>(972) 429-7212</span>
         </div>
       </a>
-      <a href="https://go.lavutogo.com/phostreetcafe" class="btn-light">
+      <button class="btn-light order-modal-btn">
         <span>Order Online</span>
-      </a>
-      <a
-        href="https://www.ubereats.com/store/pho-street-cafe/E0prjAv6Qhy5GndiOh1Prg"
-        class="btn-light btn-uber"
-      >
-        <span>Uber</span>
-        <span>Eats</span>
-      </a>
+      </button>
     </div>
   </div>
   <div class="hero-desktop">
@@ -51,7 +44,8 @@ import SlideShow from "../components/SlideShow.astro";
     display: flex;
     flex-direction: column;
   }
-  .hero-mobile a {
+  .hero-mobile a,
+  .hero-mobile button {
     font-size: 20px;
     text-decoration: none;
     display: block;
@@ -59,6 +53,7 @@ import SlideShow from "../components/SlideShow.astro";
     margin: 10px 0;
     border-radius: 6px;
     text-align: center;
+    width: 100%;
   }
   .hero-mobile a img {
     margin: 0 auto;

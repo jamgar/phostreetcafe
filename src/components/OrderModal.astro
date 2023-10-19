@@ -1,0 +1,210 @@
+---
+import { Image } from "astro:assets";
+import Chowbus from "../assets/images/chowbus-sm.png";
+import Grubhub from "../assets/images/grubhub-sm.png";
+import Uber from "../assets/images/ubereats-sm.png";
+---
+
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Order Online</h2>
+    </div>
+    <div class="modal-body">
+      <div class="order-btn-group">
+        <a
+          href="https://pos.chowbus.com/online-ordering/store/14515"
+          class="btn-light"
+        >
+          <Image src={Chowbus} alt="chowbus" class="btn-image" />
+        </a>
+        <a
+          href="https://www.grubhub.com/restaurant/pho-street-cafe-3483-fm-544-wylie/6885904?utm_source=google&utm_medium=organic&utm_campaign=place-action-link&pickup=true&rwg_token=AOZt1jV6BlqqUs238h26gDyV-ipSUbdbpdnvfIVZCH5WpSLlH8SwCUP_M9V_MTCI8RzyznxLnw_w8bqfgHx4rQVbqABLvmFu2A%3D%3D"
+          class="btn-light"
+        >
+          <Image src={Grubhub} alt="grubhub" class="btn-image" />
+        </a>
+        <a
+          href="https://www.ubereats.com/store/pho-street-cafe/E0prjAv6Qhy5GndiOh1Prg"
+          class="btn-light btn-uber"
+        >
+          <Image src={Uber} alt="uber eats" class="btn-image" />
+        </a>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p>**For delivery, select UberEats**</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    text-align: center;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: fixed;
+    padding: 20px;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    height: 75%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+  }
+
+  /* The Close Button */
+  .close {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #3c3c3c;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  span.close {
+    display: block;
+    text-align: right;
+  }
+
+  .modal-header {
+    padding: 16px 0;
+  }
+  .modal-header h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+
+  .modal-body {
+    padding: 2px 16px;
+  }
+
+  .modal-footer {
+    padding: 2px 16px;
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+  }
+  .order-btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .order-btn-group a {
+    padding: 14px 14px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    height: 75px;
+  }
+  .text-uber {
+    height: 100%;
+    margin: auto;
+  }
+  .btn-uber span:first-child {
+    font-weight: 400;
+  }
+  .btn-uber span:last-child {
+    font-weight: 700;
+    margin-top: -20px;
+  }
+  .btn-image {
+    width: auto;
+    /* max-width: 200px; */
+    height: 80%;
+    margin: 0 auto;
+  }
+
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {
+      bottom: -300px;
+      opacity: 0;
+    }
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      bottom: -300px;
+      opacity: 0;
+    }
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  const modal = document.querySelector("#myModal");
+  const btns = document.querySelectorAll(".order-modal-btn");
+  const span = document.querySelector(".close");
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+  });
+
+  span.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
