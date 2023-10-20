@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import lavuLogo from "../assets/images/lavu-logo.png";
+import Chowbus from "../assets/images/chowbus-sm.png";
+import Grubhub from "../assets/images/grubhub-sm.png";
 ---
 
 <section id="order">
@@ -18,14 +19,24 @@ import lavuLogo from "../assets/images/lavu-logo.png";
     </div>
     <div class="order-box">
       <span class="order-logo-lavu">
-        <Image src={lavuLogo} alt="Lavu Logo" width="120" />
+        <Image src={Chowbus} alt="chowbus" width="120" />
       </span>
-      <a href="https://go.lavutogo.com/phostreetcafe" class="btn-dark"
-        >Order Now</a
+      <a
+        href="https://pos.chowbus.com/online-ordering/store/14515"
+        class="btn-dark">Order Now</a
+      >
+    </div>
+    <div class="order-box">
+      <span class="order-logo-lavu">
+        <Image src={Grubhub} alt="grubhub" width="120" />
+      </span>
+      <a
+        href="https://www.grubhub.com/restaurant/pho-street-cafe-3483-fm-544-wylie/6885904?utm_source=google&utm_medium=organic&utm_campaign=place-action-link&pickup=true&rwg_token=AOZt1jV6BlqqUs238h26gDyV-ipSUbdbpdnvfIVZCH5WpSLlH8SwCUP_M9V_MTCI8RzyznxLnw_w8bqfgHx4rQVbqABLvmFu2A%3D%3D"
+        class="btn-dark">Order Now</a
       >
     </div>
   </div>
-  <p>**Order through Lavu to avoid extra fees.</p>
+  <p>**For delivery, select UberEats**</p>
 </section>
 
 <style>
