@@ -1,14 +1,37 @@
 ---
 import { Image } from "astro:assets";
+import Uber from "../assets/images/ubereats-sm.png";
 import Chowbus from "../assets/images/chowbus-sm.png";
 import Grubhub from "../assets/images/grubhub-sm.png";
 ---
 
 <section id="order">
   <h2 class="tx-center">Online Ordering Available</h2>
+  <div class="order-boxes-mobile">
+    <div class="order-btn-group">
+      <a
+        href="https://pos.chowbus.com/online-ordering/store/14515"
+        class="btn-light"
+      >
+        <Image src={Chowbus} alt="chowbus" class="btn-image" />
+      </a>
+      <a
+        href="https://www.grubhub.com/restaurant/pho-street-cafe-3483-fm-544-wylie/6885904?utm_source=google&utm_medium=organic&utm_campaign=place-action-link&pickup=true&rwg_token=AOZt1jV6BlqqUs238h26gDyV-ipSUbdbpdnvfIVZCH5WpSLlH8SwCUP_M9V_MTCI8RzyznxLnw_w8bqfgHx4rQVbqABLvmFu2A%3D%3D"
+        class="btn-light"
+      >
+        <Image src={Grubhub} alt="grubhub" class="btn-image" />
+      </a>
+      <a
+        href="https://www.ubereats.com/store/pho-street-cafe/E0prjAv6Qhy5GndiOh1Prg"
+        class="btn-light btn-uber"
+      >
+        <Image src={Uber} alt="uber eats" class="btn-image" />
+      </a>
+    </div>
+  </div>
   <div class="order-boxes">
     <div class="order-box">
-      <span class="order-logo-uber">
+      <span class="order-logos order-logo-uber">
         <span>Uber</span>
         <span>Eats</span>
       </span>
@@ -18,7 +41,7 @@ import Grubhub from "../assets/images/grubhub-sm.png";
       >
     </div>
     <div class="order-box">
-      <span class="order-logo-lavu">
+      <span class="order-logos">
         <Image src={Chowbus} alt="chowbus" width="120" />
       </span>
       <a
@@ -27,7 +50,7 @@ import Grubhub from "../assets/images/grubhub-sm.png";
       >
     </div>
     <div class="order-box">
-      <span class="order-logo-lavu">
+      <span class="order-logos">
         <Image src={Grubhub} alt="grubhub" width="120" />
       </span>
       <a
@@ -48,45 +71,73 @@ import Grubhub from "../assets/images/grubhub-sm.png";
     text-transform: uppercase;
   }
   .order-boxes {
+    display: none;
+  }
+  .order-btn-group {
     display: flex;
     justify-content: center;
-    margin: 25px 20px;
-  }
-  .order-box {
-    border: 1px solid var(--base-dark);
-    border-radius: 6px;
-    display: flex;
+    align-items: center;
     flex-direction: column;
-    padding: 10px;
-    width: 200px;
-    height: 180px;
-    margin: 0 10px;
+    padding: 20px;
   }
-  .order-box a {
-    border-radius: 6px;
-    margin: 10px auto;
-    padding: 2px 10px;
-    text-transform: uppercase;
+  .order-btn-group a {
+    padding: 14px 14px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    height: 70px;
   }
-  .order-logo-uber,
-  .order-logo-lavu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1 1 0%;
-    font-family: "Open Sans Variable", system-ui, sans-serif;
+  .btn-image {
+    width: auto;
+    height: 80%;
     margin: 0 auto;
   }
-  .order-logo-uber span {
-    display: block;
-    font-size: 36px;
-  }
-  .order-logo-uber span:first-child {
-    font-weight: 400;
-  }
-  .order-logo-uber span:last-child {
-    font-weight: 700;
-    margin-top: -20px;
+  @media only screen and (min-width: 768px) {
+    .order-boxes-mobile {
+      display: none;
+    }
+    .order-boxes {
+      display: flex;
+      justify-content: center;
+      margin: 25px 20px;
+    }
+    .order-box {
+      border: 1px solid var(--base-dark);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      width: 200px;
+      height: 180px;
+      margin: 0 10px;
+    }
+    .order-box a {
+      border-radius: 6px;
+      margin: 10px auto;
+      padding: 2px 10px;
+      text-transform: uppercase;
+    }
+    .order-logos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1 1 0%;
+      font-family: "Open Sans Variable", system-ui, sans-serif;
+      margin: 0 auto;
+    }
+    .order-logo-uber span {
+      display: block;
+      font-size: 36px;
+    }
+    .order-logo-uber span:first-child {
+      font-weight: 400;
+    }
+    .order-logo-uber span:last-child {
+      font-weight: 700;
+      margin-top: -20px;
+    }
   }
   .order @media only screen and (min-width: 1024px) {
     .order-box {
