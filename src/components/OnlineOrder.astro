@@ -21,6 +21,10 @@ import Grubhub from "../assets/images/grubhub-sm.png";
       >
         <Image src={Uber} alt="uber eats" class="btn-image" />
       </a>
+      <a
+        href="https://www.doordash.com/store/pho-street-wylie-30494319/?event_type=autocomplete&pickup=false"
+        class="btn-light btn-door-mobile">DoorDash</a
+      >
     </div>
   </div>
   <div class="order-boxes">
@@ -40,6 +44,15 @@ import Grubhub from "../assets/images/grubhub-sm.png";
       </span>
       <a
         href="https://www.ubereats.com/store/pho-street-cafe/E0prjAv6Qhy5GndiOh1Prg?diningMode=DELIVERY"
+        class="btn-dark">Order Now</a
+      >
+    </div>
+    <div class="order-box">
+      <span class="order-logos order-logo-door">
+        <span>DoorDash</span>
+      </span>
+      <a
+        href="https://www.doordash.com/store/pho-street-wylie-30494319/?event_type=autocomplete&pickup=false"
         class="btn-dark">Order Now</a
       >
     </div>
@@ -77,6 +90,10 @@ import Grubhub from "../assets/images/grubhub-sm.png";
     width: auto;
     height: 80%;
     margin: 0 auto;
+  }
+  .btn-door-mobile {
+    font-size: 24px;
+    font-weight: 700;
   }
   @media only screen and (min-width: 768px) {
     .order-boxes-mobile {
@@ -121,6 +138,10 @@ import Grubhub from "../assets/images/grubhub-sm.png";
     .order-logo-uber span:last-child {
       font-weight: 700;
       margin-top: -20px;
+    }
+    .order-logo-door span {
+      font-size: 24px;
+      font-weight: 700;
     }
   }
   .order @media only screen and (min-width: 1024px) {
